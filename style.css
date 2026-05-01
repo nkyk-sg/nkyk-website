@@ -1,0 +1,381 @@
+/* =========================================
+   NKYK Corporate Site — style.css
+   Brand: Aesop × Muji × Le Labo aesthetic
+   ========================================= */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg:      #F5F3EF;
+  --color-text:    #1C1C1C;
+  --color-accent:  #C4A882;
+  --color-grege:   #E8E5E0;
+  --color-muted:   #6E6B65;
+
+  --font-serif:    'Cormorant Garamond', Georgia, serif;
+  --font-sans:     'Inter', Helvetica Neue, Arial, sans-serif;
+
+  --max-width:     1080px;
+  --gutter:        clamp(1.5rem, 5vw, 4rem);
+  --section-gap:   clamp(5rem, 10vw, 9rem);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* =========================================
+   Header
+   ========================================= */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.5rem 0;
+  background-color: rgba(245, 243, 239, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+/* =========================================
+   Hero
+   ========================================= */
+.hero {
+  padding-top: clamp(9rem, 18vw, 14rem);
+  padding-bottom: clamp(5rem, 10vw, 9rem);
+}
+
+.hero-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+  max-width: 14ch;
+}
+
+/* =========================================
+   Sections — Common
+   ========================================= */
+.section {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+.section-inner {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.section-label-col {
+  padding-top: 0.25rem;
+}
+
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.section-body {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+  max-width: 56ch;
+}
+
+.section-body strong {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* =========================================
+   Company Section
+   ========================================= */
+.mission-block {
+  margin: 2.5rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-grege);
+  border-bottom: 1px solid var(--color-grege);
+}
+
+.mission-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.company-details {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-grege);
+  font-size: 0.88rem;
+}
+
+.detail-row:first-child {
+  border-top: 1px solid var(--color-grege);
+}
+
+.company-details dt {
+  font-weight: 400;
+  color: var(--color-muted);
+  letter-spacing: 0.03em;
+}
+
+.company-details dd {
+  font-weight: 300;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+/* =========================================
+   Divider
+   ========================================= */
+.section-divider {
+  padding: 0;
+}
+
+.section-divider hr {
+  border: none;
+  border-top: 1px solid var(--color-grege);
+}
+
+/* =========================================
+   Founder Section
+   ========================================= */
+.founder-content {
+  display: flex;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: flex-start;
+}
+
+.founder-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.founder-title {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 2.5rem;
+  margin-top: -1.5rem;
+}
+
+.founder-photo-wrap {
+  flex: 0 0 auto;
+  width: clamp(140px, 22vw, 220px);
+}
+
+.founder-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+}
+
+/* Career List */
+.career-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.career-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--color-grege);
+  gap: 0.3rem;
+}
+
+.career-list li:first-child {
+  border-top: 1px solid var(--color-grege);
+}
+
+.career-company {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+}
+
+.career-desc {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--color-muted);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+.site-footer {
+  margin-top: var(--section-gap);
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--color-grege);
+}
+
+.footer-name {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+.footer-location {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 2rem;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+}
+
+/* =========================================
+   Responsive — Tablet
+   ========================================= */
+@media (max-width: 768px) {
+  .section-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .section-label-col {
+    padding-top: 0;
+  }
+
+  .founder-content {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .founder-photo-wrap {
+    width: clamp(100px, 40vw, 160px);
+  }
+
+  .detail-row {
+    grid-template-columns: 110px 1fr;
+  }
+}
+
+/* =========================================
+   Responsive — Mobile
+   ========================================= */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .company-details dt {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.1rem;
+  }
+
+  .founder-title {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+  }
+}
