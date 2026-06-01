@@ -355,6 +355,77 @@ body {
 }
 
 /* =========================================
+   Contact Form
+   ========================================= */
+.section--contact .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.section--contact label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.section--contact input,
+.section--contact textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-grege);
+  padding: 0.6rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  resize: none;
+}
+
+.section--contact input::placeholder,
+.section--contact textarea::placeholder {
+  color: #b0aca5;
+}
+
+.section--contact input:focus,
+.section--contact textarea:focus {
+  border-bottom-color: var(--color-accent);
+}
+
+.form-submit {
+  margin-top: 0.5rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.85rem 2.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.form-submit:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.form-success {
+  margin-top: 1.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* =========================================
    Responsive — Mobile
    ========================================= */
 @media (max-width: 480px) {

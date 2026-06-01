@@ -141,6 +141,44 @@
     </div>
   </section>
 
+  <!-- Divider -->
+  <div class="section-divider">
+    <div class="container">
+      <hr />
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section section--contact">
+    <div class="container section-inner">
+      <div class="section-label-col">
+        <span class="section-label">Contact</span>
+      </div>
+      <div class="section-content-col">
+        <h2 class="section-heading">Get in Touch</h2>
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="63dbfe44-0f31-4d3d-bdb3-8f10ce371911" />
+          <input type="hidden" name="subject" value="New enquiry from nkyk.sg" />
+          <input type="hidden" name="redirect" value="https://nkyk.sg/?sent=true" />
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required rows="5" placeholder="How can we help?"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+          <p id="form-success" class="form-success" style="display:none;">Thank you. We will be in touch shortly.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -150,5 +188,17 @@
     </div>
   </footer>
 
+  <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+      if (res.ok) {
+        form.reset();
+        document.getElementById('form-success').style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
